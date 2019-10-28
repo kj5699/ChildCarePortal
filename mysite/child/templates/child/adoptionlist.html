@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% if user.is_authenticated %}
+{% for i in info %}
+<p>NAME: {{i.name}}</p>
+<li>City: {{i.currentcity}}</li>
+<li>CCI: {{i.cci}}</li>
+<li>AGE: {{i.age}}</li>
+{% endfor %}
+
+<a href="{% url 'parentform' %}">Want to adopt</a>
+{% endif %}
+
+</body>
+</html>

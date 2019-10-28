@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+   <body>
+    <div>
+      <nav  class="navbar navbar-toggleable navbar-dark bg-inverse" id="nav-main">
+        <a class="navbar-brand"  href="#"><img src="{% static 'image/logo.png' %}" width="300" height="120" alt="anil" ></a>
+        <ul class="nav navbar-nav mr-auto">
+        
+                    <li class="nav-item active">
+                <a class="nav-link text-white" href="{% url 'homepage' %}">HOME<span class="sr-only">(current)</span> </a>
+            </li>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle  text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          CCI
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">SAA's</a>
+            <a class="dropdown-item" href="#">Open Shelters</a>
+            <a class="dropdown-item" href="{% url 'Children Homes' %}">Children Homes</a>
+            <a class="dropdown-item" href="{% url 'Special Homes' %}">Special Homes</a>
+            <a class="dropdown-item" href="{% url 'Observation Homes' %}">Obesrvation Homes</a>
+            <a class="dropdown-item" href="{% url 'Place For Safety' %}">Places of Safety</a>
+        </div>
+      </li>
+               <li class="nav-item ">
+                <a class="nav-link text-white" href="{% url 'post_list' %}">CWC</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'lost' %}">Lost&Found</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link  text-white" href="#">About us</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+            {% if user.is_authenticated %}
+                <a class="nav-link text-white" href="#">Hello {{ user.username }}</a>
+            {% endif %}
+            </li>
+             
+        </ul>
+        <form class="form-inline pull-md-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn" type="submit">Search</button>
+        </form>
+       </nav>
+      </div>
+
+
+
+      <div style="height: 90vh;">
+    <div class="row" style="background-color: black">
+         <div class="span6 col-md-6 col-xs-6" >
+            <div class="showcase-left" style="height: 90vh;width: 50vw;margin: 0px;padding: 0px" >
+                <div style="background-color: black; padding:11vh 7vw 12vh 7vw;margin: 0px;">
+                     <h1 class="text-white" style="text-align: center">Children Welfare Committee</h1>
+                    <p class="text-white" style="text-align: center">Children Welfare Committee (CWC) is a body of the State Government under the Juvenile Justice Act to look after cases of children in need of care and protection.</p>
+                    <p class="text-white" style="text-align: center">CWC functions like a court and conducts regular visits to district’s CCIs.At least 3 members of CWC must be present when disposing a case.</p>
+                    <p class="text-white" style="text-align: center">The majority opinion prevails. The chairperson carries the deciding vote in case of no majority. The maximum limit for CWCs to dispose any pending case is 4 months.</p>
+                    <p class="text-white" style="text-align: center">If a child is abandoned, orphaned or surrendered, CWC can declare the child legally free for adoption.</p>
+                </div>
+            </div>
+        </div>
+        <div class="span6 col-md-6 col-xs-6" style="background-color: black;">
+            <div class="showcase-right" >
+                <img src="{% static 'image/cwc.jpg'%} ">
+            </div>
+        </div>
+    </div>
+
+
+
+
+          <nav class="navbar navbar-toggleable">
+              <p style="color: rgba(248,41,23,0.9) ; font-size: 5vh"><strong>Recent cases of CWC</strong></p>
+          </nav>
+
+   <div id="accordion" role="tablist">
+   
+  <div class="card">
+    <div class="card-header" style="background-color: black;"  role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a  class="collspsed text-white" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+            <p class="text-dark"> 15 children rescued from fake scholarship racket</p>
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body text-warning" style="background-color: black">
+They would be presented to potential donors as beneficiaries of free education
+Fifteen children, including three girls, who were being ‘used for a fake scholarship racket’ were rescued by the police on Tuesday. The children have been produced before the Child Welfare Committee (CWC).
+The Yelahanka New Town police have arrested three persons — Lokesh Naik (in-charge officer of Bright Seva Foundation Trust), Revana Siddeshwara and Siddagangamma, who is a teacher at a school for the differently-abled — in connection with the case.
+A majority of the children are differently-abled and were part of the residential school in Yelahanka where Siddagangamma worked.
+According to the police, the modus operandi of the accused was to ‘hire’ children from slums and rope in minors from the residential institution for differently-abled children.
+These children would be presented before people at functions and programmes as beneficiaries of free education, and money would be collected from donors. They would allegedly take the same set of children to various places, collecting money in their names. “They took advantage of parents from poor backgrounds,” a police officer said.
+Naik and Siddeshwara ran the racket with the help of Siddagangamma, who helped them take the children away from the school whenever they organised programmes to collect donations.
+      </div>
+    </div>
+  </div>
+ 
+  <div class="card">
+    <div class="card-header" style="background-color: black;" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a class="collapsed text-white" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+        Kerala: New body to deal with child abuses
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body text-warning" style="background-color: black">
+        KOZHIKODE: A  child rescue force has been set up under the district child protection unit to check  trafficking, labour, beggary and abuse cases of children. The project launched in  Pathanamthitta, Alappuzha, Kottayam and Kollam districts  will  be expanded to other districts in the next phase. The  force consisting   of six rescue officers in each district will  trace,  rescue  and rehabilitate the children.   This is on the lines of   ‘Operation Sharanabalyam’ programme which helped  curb  child labour during Sabarimala pilgrimage.
+“The child rescue force will coordinate with the child help desk of the child welfare committee (CWC). The rescue officers will function on shift basis round the clock. The inspection to trace out children will be carried out three days in a week,” said  A.O.  Abeen,  state nodal officer of the Saranabalyam project. The rescued children should be brought before the CWC and sheltered at observation homes before sending them with the parents.
+
+In case of children from other states, the rescue officers should contact the CWC in the home district of the child and facilitate  repatriation.  Sabarimala pilgrimage has witnessed children largely being employed in shops at Laaha, Pampa, Kanamala, Nilakkal and  Chengannur.  As many as 12 such children were rescued from Sabarimala last year. “These children, girls and boys,  were sheltered in pathetic conditions making  them vulnerable to sexual abuse,” said  Abeen.
+Child labour racket thrives  during    Oachira temple festival also. “This year, six children were rescued from child labour and beggary. All of them are natives,” said  Siju Ben,  district child protection officer of Kollam.   Since 2015, 35 children had been rescued from Oachira alone, a majority of them from outside Kerala. The child rescue officers have  already been appointed in the four districts.
+
+      </div>
+    </div>
+  </div>
+
+       <div class="card">
+    <div class="card-header" style="background-color: black;" role="tab" id="headingThree">
+      <h5 class="mb-0">
+        <a class="collapsed text-white" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+          Juvenile justice and care suffers in absence of Child Welfare Committees
+        </a>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body text-warning" style="background-color: black">
+       Child Welfare Committees (CWCs), which are an integral part of the juvenile justice and care system, have not been set up in J&K yet.
+Coupled with a defunct Juvenile Justice Board and other lacunae, as reported by Greater Kashmir in a series of stories this month, the absence of CWCs renders the juvenile justice system in the state more a law on papers than a practice.
+The Juvenile Justice Act (JJA) calls for setting up a CWC in every district comprising of a chairman and four other people, of whom one shall be a woman and another member an expert on matters concerning children.
+A CWC takes cognisance of and receives children in need of care and protection, conducts inquiries under section 34 of the Act and decide on matters related to children in need of care and protection brought before the committee.
+Also, according to the JJA, the committee ensures appropriate rehabilitation and restoration of the child and follow-up the child care plan, directs the officers in charge of children’s home to receive children requiring shelter and care.
+It also monitors all institutional and non-institutional child care services for children in need of care and protection within their jurisdiction and makes appropriate recommendations to the District Child Protection Unit and State Child Protection Society.
+A child rescued from harmful environments like a brothel, abusive family or such situations must be produced before the CWC that will carry out an inquiry to ensure optimum rehabilitation with minimal damage to the child.
+“But the government seems to be in slumber. These committees would be of great help to the children,” said an official at the social welfare department on the condition of anonymity.
+The government had constituted an Apex Body Committee, which was mandated to appoint candidates for CWCs as well as Justice Juvenile Board, said Justice (Retired) Hasnain Masoodi, who is chairman of the committee.
+“Since no infrastructure support has been provided to the apex committee, CWCs have not been formed,” said Justice Masoodi.
+He said as the focus on delinquent children expanded to care and protection from conflict with law only, the need was felt for CWCs.
+Referring to lacunae in juvenile justice and care system, Justice Masoodi said, “The Juvenile Home was not functioning properly the way it should have been. It was only after a Public Interest Litigation was filed in the court that the court took notice of the issue concerning the Juvenile Home.”
+The phone of the director social welfare Hasmat Ali Yatoo rang unanswered.
+      </div>
+    </div>
+  </div>
+       <div class="card">
+    <div class="card-header" style="background-color: black;" role="tab" id="headingfour">
+      <h5 class="mb-0">
+        <a class="collapsed text-white" data-toggle="collapse" href="#collapsefour" role="button" aria-expanded="false" aria-controls="collapsefour">
+          5 Missing Children Return Home
+        </a>
+      </h5>
+    </div>
+    <div id="collapsefour" class="collapse" role="tabpanel" aria-labelledby="headingfour" data-parent="#accordion">
+      <div class="card-body text-warning" style="background-color: black">
+       Srinagar—To oversee the implementation of decisions taken at recently held conference on Juvenile Justice System, Justice Madan B Lokur, Judge Supreme Court of India, along with ChD Lef Justice, Jammu and Kashmir, Justice Badar Durrez Ahmed and Justice Ali Mohammad Magrey visited the Juvenile Home at Harwan, Srinagar.
+The team interacted with the children there and took stock of facilities available to the inmates at the home. Five missing children were found in the home and it was decided that immediate efforts be made to ensure their rehabilitation and safe return to their families in coordination with UNICEF India, Social Welfare Department and other line Departments including Police.
+Among the missing children, three children were handed over to their families, and remaining two were reunited with their family members at a function held here today. The functioned was presided over by the Chief Justice and the process was held in coordination with District Magistrate Srinagar, UNICEF India, Mission Director ICPS J&K and Child Welfare Committee, West Bengal.
+Chairman Juvenile Justice Committee J&K High Court, Justice All Mohammad Magrey, Chairman Selection cum oversight Committee, Justice Hasnain Masoodi, Special DGP, V.K Singh, Commissioner Secretary Social Welfare Department, Sajad Ahmad Khan, Registrar General High Court, Sanjay Dhar, Director Judicial Academy ( Secretary Juvenile Justice Committee High Court) Abdul Rasheed Malik, District Magistrate Srinagar, Syed Abid Rasheed, State Mission Director ICPS, G A Sofi, SSP Srinagar, Deputy Director ICDS and Representative of UNICEF besides father of one missing child were also present.
+The rehabilitation process of the two restored children with their families will be monitored by the Social Welfare Department, District Magistrate Srinagar and Child Welfare Committee, West Bengal in coordination with UNICEF India so that these children do not become victims of exploitation again.
+      </div>
+    </div>
+  </div>
+</div>
+
+            <nav class="navbar navbar-toggleable">
+                <p style="color: rgba(248,41,23,0.9) ; font-size: 5vh"><strong>Any cases of child labour in your knowledge ? please report. Your identity is secured with us</strong></p>
+          </nav>
+
+
+        <div style="border: 1px solid black; margin: 5vh 25vw 5vh 25vw;padding-right:5vw;padding-left:5vw;-webkit-box-shadow: -1px -2px 20px 7px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px -2px 20px 7px rgba(0,0,0,0.75);
+box-shadow: -1px -2px 20px 7px rgba(0,0,0,0.75);">
+          <form  action="#" method="POST" target="_blank" autocomplete="on" class="case-form">
+    <fieldset style="width:500px;">
+        <legend></legend>
+        <div class="form-group">
+                     {{ form.as_p }}  
+                     </div>
+                     
+
+                 
+                    <button type="submit" class="btn btn-success btn-block">Save</button>
+        
+            
+        </fieldset>
+        </form>
+            </div>
+
+
+
+
+
+      <div style="background: black;max-height: 70vh " class="jumbotron jumbotron-fluid">
+       <table style="border: hidden " class="table table-hover-">
+           <tr style="border: hidden">
+               <td><a style="padding-left: 150px;" href="#" class="text-white"  >Home</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >About us</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Contact us</a></td>
+           </tr>
+           <tr style="border: hidden">
+               <td><a style="padding-left: 150px;" href="#" class="text-white"  >Feedback</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Adoption</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Donate to CCI</a></td>
+           </tr>
+           <tr style="border: hidden;">
+               <td><a style="padding-left: 150px;" href="#" class="text-white"  >CWC Cases</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" ">CCI portal in media</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Lost&found children</a></td>
+           </tr>
+       </table>
+        <a href="https://www.facebook.com/anil.lohar.50364" type="button" style=" background: #3B5998; color: white; padding: 2vh;" class="btn btn-social-icon btn-fb" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/anil-lohar-195967111/" type="button" style="background: #007bb5;color: white; padding: 2vh;" class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+   </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+   </body>
+</html>

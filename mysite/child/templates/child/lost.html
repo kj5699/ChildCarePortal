@@ -1,0 +1,140 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  </head>
+   <body >
+   <div>
+      <nav  class="navbar navbar-toggleable navbar-dark bg-inverse" id="nav-main">
+        <a class="navbar-brand"  href="#"><img src="{% static 'image/logo.png' %}" width="300" height="120" alt="anil" ></a>
+        <ul class="nav navbar-nav mr-auto">
+        
+                    <li class="nav-item active">
+                <a class="nav-link text-white" href="#">HOME<span class="sr-only">(current)</span> </a>
+            </li>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle  text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          CCI
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">SAA's</a>
+            <a class="dropdown-item" href="#">Open Shelters</a>
+            <a class="dropdown-item" href="{% url 'Children Homes' %}">Children Homes</a>
+            <a class="dropdown-item" href="{% url 'Special Homes' %}">Special Homes</a>
+            <a class="dropdown-item" href="{% url 'Observation Homes' %}">Obesrvation Homes</a>
+            <a class="dropdown-item" href="{% url 'Place For Safety' %}">Places of Safety</a>
+        </div>
+      </li>
+               <li class="nav-item ">
+                <a class="nav-link text-white" href="{% url 'post_list' %}">CWC</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'lost' %}">Lost&Found</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link  text-white" href="#">About us</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+            {% if user.is_authenticated %}
+                <a class="nav-link text-white" href="#">Hello {{ user.username }}</a>
+            {% endif %}
+            </li>
+             
+        </ul>
+        <form class="form-inline pull-md-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn" type="submit">Search</button>
+        </form>
+       </nav>
+      </div>
+ <nav style="background-color: black" class="navbar navbar-togleable">
+     <ul class="nav navbar-nav">
+         <li class="text-white" style="font-size: 10vh">Lost & Found Children </li>
+     </ul>
+     <ul class="nav navbar-nav pull-md-right">
+                  <li class="text-danger" style="font-size: 3vh;padding-bottom: 2vh">"Thousand of children go missing everyday. never to see their parents again. It's time to stop this."<strong class="text-success">Have you found a lost Child?</strong> </li>
+         <li class="nav-item" style="padding-bottom: 5vh"><a href= "{% url 'addlost' %}" type="button" class="btn btn-outline-primary">Click here</a></li>
+        
+
+     </ul>
+ </nav>
+ 	<div class="container-fluid row" style="; background-color:  rgba(88,75,168,0.9);padding: 8vh 0vw 15vh 0vw;">
+ 		
+ 		 
+ 		 {% for i in info %}
+         <div class="col-md-4 col-sm-4">
+      
+         <div style="height: 400px" class="card">
+         <img style="height: 82%;" class="card-img-center" src="{% static 'image/ann.jpg'%}">
+            <div class="card-body">
+              <h4 class="card-title">{{i.name}}</h4>
+                <p class="card-text">{{i.Detail}}<small class="text-muted">   28 minutes ago</small></p>
+            </div>
+       		</div>
+       		</div>	
+         
+         {% endfor %}
+
+        </div>
+
+
+
+     <ul class="pagination text-white" style="background-color:  rgba(88,75,168,0.9);padding-left: 40vw; padding-bottom: 10vw;margin-bottom: 0px">
+         <li class="page-item"><a class="page-link" type="button" href="#">1</a></li>
+         <li class="page-item"><a class="page-link" type="button" href="lostfound2.html">2</a></li>
+         <li class="page-item"><a class="page-link" type="button" href="#">3</a></li>
+         <li class="page-item"><a class="page-link" type="button" href="#">4</a></li>
+         <li class="page-item"><a class="page-link" type="button" href="lostfound2.html">next</a></li>
+     </ul>
+
+
+
+     <div style="background: black;max-height: 70vh " class="jumbotron jumbotron-fluid">
+       <table style="border: hidden " class="table table-hover-">
+           <tr style="border: hidden">
+               <td><a style="padding-left: 150px;" href="#" class="text-white"  >Home</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >About us</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Contact us</a></td>
+           </tr>
+           <tr style="border: hidden">
+               <td><a style="padding-left: 150px;" href="#" class="text-white"  >Feedback</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Adoption</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Donate to CCI</a></td>
+           </tr>
+           <tr style="border: hidden">
+               <td><a style="padding-left: 150px;" href="#" class="text-white"  >CWC Cases</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" ">CCI portal in media</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Lost&found children</a></td>
+           </tr>
+       </table>
+      <a href="https://www.facebook.com/anil.lohar.50364" type="button" style=" background: #3B5998; color: white; padding: 2vh;" class="btn btn-social-icon btn-fb" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/anil-lohar-195967111/" type="button" style="background: #007bb5;color: white; padding: 2vh;" class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+   </div>
+
+
+
+ <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+   </body>
+</html>
+
+
+
+
+
+
