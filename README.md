@@ -14,9 +14,9 @@ Follow the Steps:
 <br> Change directory to mysite  ``` cd mysite ```
 
 #### To Run
-<br> Run  ```python manage.py runserver```
+Run  ```python manage.py runserver```
 
 #### To Create Your Own Superuser i.e your own login credentials
-<br> Run  ```python manage.py createsuperuser```
+Run  ```python manage.py createsuperuser```
 
 
